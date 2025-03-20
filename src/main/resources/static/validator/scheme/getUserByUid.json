@@ -1,0 +1,11 @@
+{
+  "validatorName": "getUserByUidValidator",
+  "items": [
+    {
+      "field": "uid",
+      "description": "uid пользователя",
+      "rule": "NOT_NULL_OR_EMPTY",
+      "errorMsg": "Поле uid не может быть null или иметь пустое значение"
+    }
+  ]
+}

@@ -43,7 +43,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests((req) -> {
                     req.requestMatchers(
                                     "/js/**",
-                                    "/example/**",
+                                    "/clean-architecture/**",
                                     "/css/**",
                                     "/files/**",
                                     "/images/**",

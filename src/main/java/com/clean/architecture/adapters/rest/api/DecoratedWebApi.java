@@ -1,6 +1,7 @@
 package com.clean.architecture.adapters.rest.api;
 
 import com.clean.architecture.adapters.rest.controller.UserController;
+import com.clean.architecture.adapters.rest.validator.aspecj.ValidateEndpointParameters;
 import com.generated.swaggerCodegen.api.CleanArchitectureApi;
 import com.generated.swaggerCodegen.model.SingleUserBackendResponse;
 import com.generated.swaggerCodegen.model.UserBackendResponse;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DecoratedWebApi extends AbstractLoggableApiDecorator implements CleanArchitectureApi {
     private final UserController userController;
 
+    @ValidateEndpointParameters(endpointName = "getUserByUid", baseSchemeName = "getUserByUid")
     @Override
     public ResponseEntity<SingleUserBackendResponse> getUserByUid(final String uid) {
         return processing("getUserByUid", userController::getUserByUid, uid);
