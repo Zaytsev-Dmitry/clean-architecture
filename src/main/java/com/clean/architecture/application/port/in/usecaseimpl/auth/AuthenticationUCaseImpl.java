@@ -3,7 +3,7 @@ package com.clean.architecture.application.port.in.usecaseimpl.auth;
 import com.clean.architecture.application.port.out.rest.keycloak.KeycloakClient;
 import com.clean.architecture.application.port.out.rest.keycloak.response.UserInfoResponse;
 import com.clean.architecture.application.usecase.auth.AuthenticationUCase;
-import com.clean.architecture.domain.CleanArchitectureUserDetails;
+import com.clean.architecture.domain.auth.CleanArchitectureUserDetails;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.userdetails.UserDetails;

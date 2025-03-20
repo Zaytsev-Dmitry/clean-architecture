@@ -1,6 +1,7 @@
-package com.clean.architecture.adapters.rest.presenter;
+package com.clean.architecture.adapters.rest.presenter.user;
 
-import com.clean.architecture.domain.User;
+import com.clean.architecture.adapters.rest.presenter.base.BaseListPresenter;
+import com.clean.architecture.domain.entity.User;
 import com.generated.swaggerCodegen.model.UserBackendResponse;
 import com.generated.swaggerCodegen.model.UserResponse;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserPresenter extends BasePresenter<UserBackendResponse, User> {
+public class UserListPresenter extends BaseListPresenter<UserBackendResponse, User> {
 
     @Override
     protected UserBackendResponse newResponse(final List<User> req) {
@@ -26,5 +27,4 @@ public class UserPresenter extends BasePresenter<UserBackendResponse, User> {
         );
         return result;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.clean.architecture.domain;
+package com.clean.architecture.domain.auth;
 
 import com.clean.architecture.application.port.out.rest.keycloak.response.UserInfoResponse;
 import org.springframework.security.core.userdetails.UserDetails;

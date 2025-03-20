@@ -1,5 +1,5 @@
 
-package com.clean.architecture.domain;
+package com.clean.architecture.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -2,19 +2,21 @@ package com.clean.architecture.application.port.in.usecaseimpl.user;
 
 import com.clean.architecture.application.port.out.repository.UserRepository;
 import com.clean.architecture.application.usecase.user.GetAllUsersUCase;
+import com.clean.architecture.application.usecase.user.GetUserByIdUCase;
 import com.clean.architecture.domain.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service(value = "GetAllUsersImpl")
+@Service(value = "GetUserByIdImpl")
 @AllArgsConstructor
-public class GetAllUsersUCaseImpl implements GetAllUsersUCase {
+public class GetUserByIdUCaseImpl implements GetUserByIdUCase {
     private UserRepository repository;
 
+
     @Override
-    public List<User> getAll() {
-        return this.repository.findAll();
+    public User getByUid(final String uid) {
+        return this.repository.getByUid(uid);
     }
 }

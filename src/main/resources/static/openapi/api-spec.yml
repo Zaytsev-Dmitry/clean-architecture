@@ -3,19 +3,15 @@ info:
   title: Clean architecture API
   version: '1.0.0'
 servers:
-  - url: 'unknown'
-    description: prod
-  - url: 'unknown'
-    description: dev
   - url: 'http://localhost:8080'
     description: local
 paths:
-  /example/test:
+  /clean-architecture/users:
     get:
       tags:
-        - Test
-      operationId: testEndpoint
-      description: 'Тестовый эндпоинт'
+        - Users
+      operationId: getAllUsers
+      description: 'Получить всех пользователей'
       responses:
         '200':
           description: OK
@@ -23,6 +19,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserBackendResponse'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+        '500':
+          $ref: '#/components/responses/500'
+#--------------------------------------------------------------------------------------------------------#
+  /clean-architecture/users/{uid}:
+    get:
+      tags:
+        - Users
+      operationId: getUserByUid
+      description: 'Получить пользователя по uid'
+      parameters:
+        - name: uid
+          schema:
+            type: string
+          in: path
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleUserBackendResponse'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -97,6 +121,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/UserResponse'
+#--------------------------------------------------------------------------------------------------------#
+    SingleUserBackendResponse:
+      allOf:
+        - $ref: '#/components/schemas/BasicBackendResponse'
+        - type: object
+          properties:
+            payload:
+              $ref: '#/components/schemas/UserResponse'
 #--------------------------------------------------------------------------------------------------------#
     UserResponse:
       type: object
