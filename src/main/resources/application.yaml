@@ -1,0 +1,62 @@
+spring:
+  application:
+    version: @project.version@
+    name: @project.artifactId@
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/clean-architecture}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      pool-name: clean-architecture-hikari-pool
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/changelog-master.xml
+    default-schema: public
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+springdoc:
+  swagger-ui:
+    url: /openapi/api-spec.yml
+    path: docs
+    disable-swagger-default-url: true
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8080
+logging:
+  level:
+    com..clean.architecture: DEBUG
+    # Логирование Spring Transactions
+    org.hibernate.engine.transaction.internal.TransactionImpl: TRACE
+    org.springframework.transaction.interceptor: TRACE
+    org.hibernate.orm.jdbc.bind: TRACE
+
+    org.springframework.transaction: TRACE
+    org.hibernate.SQL: TRACE
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.orm.jpa: TRACE
+
+clean-architecture:
+  keycloak:
+    host: ${KEYCLOAK_HOST_URL:http://localhost:7080}
+    clientId: ${CLEAN_ARCHITECTURE_KEYCLOAK_CLIENT_ID:d3f1202c-d7d6-4694-9a6c-6e1575321baf}
+    secretId: ${CLEAN_ARCHITECTURE_SECRET_ID:3rx6Kyk0U4FCVfp7HVRGtknTIfwggaym}
+    introspectUrl: /realms/CLEAN_ARCHITECTURE/protocol/openid-connect/token/introspect
+    userinfoUrl: /realms/CLEAN_ARCHITECTURE/protocol/openid-connect/userinfo
+    tokenUrl: /realms/CLEAN_ARCHITECTURE/protocol/openid-connect/token
