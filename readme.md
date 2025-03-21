@@ -46,7 +46,13 @@ main
 │       ├── adapters                # External system adapters (REST API, DB, etc.)
 │       │   └── rest                 # REST API adapters
 │       │       ├── api              # API interfaces & abstractions
+│       │       │   ├── desktop      # Desktop API
+│       │       │   ├── mobile       # Mobile API
+│       │       │   └── web          # Web API
 │       │       ├── controller       # HTTP request controllers
+│       │       │   ├── desktop      # Desktop cotrollers
+│       │       │   ├── mobile       # Mobile cotrollers
+│       │       │   └── web          # Web cotrollers
 │       │       ├── handler          # Global exception & error handling
 │       │       ├── presenter        # Data transformation (DTOs, mappers)
 │       │       ├── security         # Authentication & JWT security

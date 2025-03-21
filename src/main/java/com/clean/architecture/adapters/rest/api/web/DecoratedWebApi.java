@@ -1,6 +1,6 @@
-package com.clean.architecture.adapters.rest.api;
+package com.clean.architecture.adapters.rest.api.web;
 
-import com.clean.architecture.adapters.rest.controller.UserController;
+import com.clean.architecture.adapters.rest.controller.web.UserController;
 import com.clean.architecture.adapters.rest.validator.aspecj.ValidateEndpointParameters;
 import com.generated.swaggerCodegen.api.CleanArchitectureApi;
 import com.generated.swaggerCodegen.model.SingleUserBackendResponse;

@@ -1,4 +1,4 @@
-package com.clean.architecture.adapters.rest.controller;
+package com.clean.architecture.adapters.rest.controller.web;
 
 import com.clean.architecture.adapters.rest.presenter.user.UserListPresenter;
 import com.clean.architecture.adapters.rest.presenter.user.UserSinglePresenter;

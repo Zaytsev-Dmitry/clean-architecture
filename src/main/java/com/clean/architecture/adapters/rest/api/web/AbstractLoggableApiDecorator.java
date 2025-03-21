@@ -1,4 +1,4 @@
-package com.clean.architecture.adapters.rest.api;
+package com.clean.architecture.adapters.rest.api.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
