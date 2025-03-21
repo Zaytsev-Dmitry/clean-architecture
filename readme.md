@@ -42,41 +42,43 @@
 ```plaintext
 main
 ├── java
-│   └── com.clean.architecture       # Main package with all business logic and adapters
-│       ├── adapters                 # External system adapters (REST API, DB, etc.)
-│       │   └── rest                 # REST API adapters
-│       │       ├── api              # API interfaces & abstractions
-│       │       │   ├── desktop      # Desktop API
-│       │       │   ├── mobile       # Mobile API
-│       │       │   └── web          # Web API
-│       │       ├── controller       # HTTP request controllers
-│       │       │   ├── desktop      # Desktop cotrollers
-│       │       │   ├── mobile       # Mobile cotrollers
-│       │       │   └── web          # Web cotrollers
-│       │       ├── handler          # Global exception & error handling
-│       │       ├── presenter        # Data transformation (DTOs, mappers)
-│       │       ├── security         # Authentication & JWT security
-│       │       └── validator        # Input data validation
-│       ├── application              # Business logic (use cases)
-│       │   ├── port                 # Clean Architecture ports
-│       │   │   ├── in               # Input ports (use cases & scenarios)
-│       │   │   │   ├── delegate     # Use cases delegates
-│       │   │   │   ├── usecaseimpl  # Use cases implementations
-│       │   │   └── out              # Output ports (repositories, APIs)
-│       │   │       ├── repository   # Database repositories
-│       │   │       └── rest         # External API integrations
-│       │   ├── usecase              # Use cases contracts
-│       │   └── util                 # Utility classes
-│       ├── domain                   # Domain layer (entities, exceptions)
-│       │   ├── entity               # Core business entities
-│       │   └── exception            # Custom exceptions
-├── resources                        # Application resources
-│   ├── application.yaml             # Main configuration file
-│   ├── db                           # Database migrations (Liquibase/Flyway)
-│   └── static                       # Static files (Swagger, JSON schemas)
-│       ├── openapi                  # OpenAPI API spec
-│       └── validator                # JSON validation schemas
-│           └── scheme               # Data validation schemas
+│   └── com.clean.architecture           # Main package with all business logic and adapters
+│       ├── adapters                     # External system adapters (REST API, DB, etc.)
+│       │   └── in                       # Input adapters
+│       │       ├── rest                 # REST API adapters
+│       │       │   ├── api              # API interfaces & abstractions
+│       │       │   │   ├── desktop      # Desktop API
+│       │       │   │   ├── mobile       # Mobile API
+│       │       │   │   └── web          # Web API
+│       │       │   ├── controller       # HTTP request controllers
+│       │       │   │   ├── desktop      # Desktop cotrollers
+│       │       │   │   ├── mobile       # Mobile cotrollers
+│       │       │   │   └── web          # Web cotrollers
+│       │       │   ├── handler          # Global exception & error handling
+│       │       │   ├── presenter        # Data transformation (DTOs, mappers)
+│       │       │   ├── security         # Authentication & JWT security
+│       │       │   └── validator        # Input data validation
+│       │       └── out                  # Output adapters
+│       ├── application                  # Business logic (use cases)
+│       │   ├── port                     # Clean Architecture ports
+│       │   │   ├── in                   # Input ports (use cases & scenarios)
+│       │   │   │   ├── delegate         # Use cases delegates
+│       │   │   │   ├── usecaseimpl      # Use cases implementations
+│       │   │   └── out                  # Output ports (repositories, APIs)
+│       │   │       ├── repository       # Database repositories
+│       │   │       └── rest             # External API integrations
+│       │   ├── usecase                  # Use cases contracts
+│       │   └── util                     # Utility classes
+│       ├── domain                       # Domain layer (entities, exceptions)
+│       │   ├── entity                   # Core business entities
+│       │   └── exception                # Custom exceptions
+├── resources                            # Application resources
+│   ├── application.yaml                 # Main configuration file
+│   ├── db                               # Database migrations (Liquibase/Flyway)
+│   └── static                           # Static files (Swagger, JSON schemas)
+│       ├── openapi                      # OpenAPI API spec
+│       └── validator                    # JSON validation schemas
+│           └── scheme                   # Data validation schemas
 ```
 
 ---
