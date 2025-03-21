@@ -1,4 +1,4 @@
-package com.clean.architecture.application.port.in.usecaseimpl.auth;
+package com.clean.architecture.application.usecase.auth.impl;
 
 import com.clean.architecture.adapters.AppSettings;
 import com.clean.architecture.application.port.out.rest.keycloak.KeycloakClient;

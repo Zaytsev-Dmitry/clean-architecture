@@ -1,4 +1,4 @@
-package com.clean.architecture.application.port.in.usecaseimpl.user;
+package com.clean.architecture.application.usecase.user.impl;
 
 import com.clean.architecture.application.port.out.repository.UserRepository;
 import com.clean.architecture.application.usecase.user.GetAllUsersUCase;

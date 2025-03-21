@@ -40,45 +40,54 @@
 ## 📂 Project Structure
 
 ```plaintext
-main
-├── java
-│   └── com.clean.architecture           # Main package with all business logic and adapters
-│       ├── adapters                     # External system adapters (REST API, DB, etc.)
-│       │   └── in                       # Input adapters
-│       │       ├── rest                 # REST API adapters
-│       │       │   ├── api              # API interfaces & abstractions
-│       │       │   │   ├── desktop      # Desktop API
-│       │       │   │   ├── mobile       # Mobile API
-│       │       │   │   └── web          # Web API
-│       │       │   ├── controller       # HTTP request controllers
-│       │       │   │   ├── desktop      # Desktop cotrollers
-│       │       │   │   ├── mobile       # Mobile cotrollers
-│       │       │   │   └── web          # Web cotrollers
-│       │       │   ├── handler          # Global exception & error handling
-│       │       │   ├── presenter        # Data transformation (DTOs, mappers)
-│       │       │   ├── security         # Authentication & JWT security
-│       │       │   └── validator        # Input data validation
-│       │       └── out                  # Output adapters
-│       ├── application                  # Business logic (use cases)
-│       │   ├── port                     # Clean Architecture ports
-│       │   │   ├── in                   # Input ports (use cases & scenarios)
-│       │   │   │   ├── delegate         # Use cases delegates
-│       │   │   │   ├── usecaseimpl      # Use cases implementations
-│       │   │   └── out                  # Output ports (repositories, APIs)
-│       │   │       ├── repository       # Database repositories
-│       │   │       └── rest             # External API integrations
-│       │   ├── usecase                  # Use cases contracts
-│       │   └── util                     # Utility classes
-│       ├── domain                       # Domain layer (entities, exceptions)
-│       │   ├── entity                   # Core business entities
-│       │   └── exception                # Custom exceptions
-├── resources                            # Application resources
-│   ├── application.yaml                 # Main configuration file
-│   ├── db                               # Database migrations (Liquibase/Flyway)
-│   └── static                           # Static files (Swagger, JSON schemas)
-│       ├── openapi                      # OpenAPI API spec
-│       └── validator                    # JSON validation schemas
-│           └── scheme                   # Data validation schemas
+│           com.clean.architecture/             # Root package for clean architecture structure
+│               ├── adapters/                   # Adapters layer (interface adapters)
+│               │   ├── in/                     # Incoming adapters (handling input)
+│               │   │   └── rest/               # REST API layer
+│               │   │       ├── api/            # API endpoints
+│               │   │       │   ├── desktop/    # Desktop-specific endpoints
+│               │   │       │   ├── mobile/     # Mobile-specific endpoints
+│               │   │       │   └── web/        # Web-specific endpoints
+│               │   │       ├── controller/     # Controllers for handling requests
+│               │   │       │   ├── desktop/    # Desktop-specific controllers
+│               │   │       │   ├── mobile/     # Mobile-specific controllers
+│               │   │       │   └── web/        # Web-specific controllers
+│               │   │       ├── handler/        # General request handlers
+│               │   │       ├── presenter/      # Presentation layer
+│               │   │       │   ├── base/       # Base presenter classes
+│               │   │       │   └── user/       # User-specific presenters
+│               │   │       ├── security/       # Security configurations
+│               │   │       │   └── config/     # Security-related configurations
+│               │   │       └── validator/      # Input validation components
+│               │   └── out/                    # Outgoing adapters (handling output, persistence, external calls)
+│               ├── application/                # Application layer (use cases, business logic)
+│               │   ├── port/                   # Ports for dependency inversion
+│               │   │   ├── in/                 # Input ports (use case interfaces)
+│               │   │   │   └── delegate/       # Delegates for input handling
+│               │   │   └── out/                # Output ports (external communication)
+│               │   │       ├── repository/     # Repository interfaces
+│               │   │       └── rest/           # REST clients for external services
+│               │   │           └── keycloak/   # Keycloak integration
+│               │   ├── usecase/                # Use cases (business logic)
+│               │   │   ├── auth/               # Authentication use cases
+│               │   │   │   └── impl/           # Implementation of authentication use cases
+│               │   │   └── user/               # User-related use cases
+│               │   │       └── impl/           # Implementation of user use cases
+│               │   └── util/                   # Utility classes
+│               └── domain/                     # Domain layer (entities and core business logic)
+│                   ├── auth/                   # Authentication-related domain models
+│                   ├── entity/                 # Core business entities
+│                   └── exception/              # Custom exceptions
+├── resources/                                  # Resource files (configuration, static assets)
+│   ├── application.yaml                        # Main application configuration file
+│   ├── db/                                     # Database-related resources
+│   │   └── changelog/                          # Database migration scripts
+│   └── static/                                 # Static resources
+│       ├── openapi/                            # OpenAPI specifications
+│       │   └── api-spec.yml                    # OpenAPI specification file
+│       └── validator/                          # Validation-related resources
+│           └── scheme/                         # Validation schema files
+         
 ```
 
 ---
