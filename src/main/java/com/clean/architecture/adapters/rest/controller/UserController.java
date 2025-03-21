@@ -2,7 +2,7 @@ package com.clean.architecture.adapters.rest.controller;
 
 import com.clean.architecture.adapters.rest.presenter.user.UserListPresenter;
 import com.clean.architecture.adapters.rest.presenter.user.UserSinglePresenter;
-import com.clean.architecture.application.port.in.UserUCaseDelegate;
+import com.clean.architecture.application.port.in.delegate.UserUCaseDelegate;
 import com.generated.swaggerCodegen.api.CleanArchitectureApi;
 import com.generated.swaggerCodegen.model.SingleUserBackendResponse;
 import com.generated.swaggerCodegen.model.UserBackendResponse;

@@ -1,4 +1,4 @@
-package com.clean.architecture.application.port.in;
+package com.clean.architecture.application.port.in.delegate;
 
 import com.clean.architecture.application.usecase.user.GetAllUsersUCase;
 import com.clean.architecture.application.usecase.user.GetUserByIdUCase;

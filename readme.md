@@ -51,13 +51,15 @@ main
 │       │       ├── presenter        # Data transformation (DTOs, mappers)
 │       │       ├── security         # Authentication & JWT security
 │       │       └── validator        # Input data validation
-│       ├── application             # Business logic (use cases)
+│       ├── application              # Business logic (use cases)
 │       │   ├── port                 # Clean Architecture ports
 │       │   │   ├── in               # Input ports (use cases & scenarios)
+│       │   │   │   ├── delegate     # Use cases delegates
+│       │   │   │   ├── usecaseimpl  # Use cases implementations
 │       │   │   └── out              # Output ports (repositories, APIs)
 │       │   │       ├── repository   # Database repositories
 │       │   │       └── rest         # External API integrations
-│       │   ├── usecase              # Business logic implementation
+│       │   ├── usecase              # Business logic contracts
 │       │   └── util                 # Utility classes
 │       ├── domain                   # Domain layer (entities, exceptions)
 │       │   ├── entity               # Core business entities
