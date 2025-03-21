@@ -59,7 +59,7 @@ main
 │       │   │   └── out              # Output ports (repositories, APIs)
 │       │   │       ├── repository   # Database repositories
 │       │   │       └── rest         # External API integrations
-│       │   ├── usecase              # Business logic contracts
+│       │   ├── usecase              # Use cases contracts
 │       │   └── util                 # Utility classes
 │       ├── domain                   # Domain layer (entities, exceptions)
 │       │   ├── entity               # Core business entities
