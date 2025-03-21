@@ -12,8 +12,7 @@
 🔹 **Scalable & Maintainable** — Based on Clean Architecture principles, ensuring flexibility & modularity.  
 🔹 **Production-Ready** — Pre-configured with **Spring Boot**, **Hibernate**, **PostgreSQL**, **Swagger**, and more!  
 🔹 **Security First** — Integrated authentication, validation, and best security practices.  
-🔹 **API-First Approach** — Fully documented with **OpenAPI** for seamless integration.  
-🔹 **CI/CD-Ready** — Future-proof with GitHub Actions for automation.
+🔹 **API-First Approach** — Fully documented with **OpenAPI** for seamless integration.
 
 ---
 
