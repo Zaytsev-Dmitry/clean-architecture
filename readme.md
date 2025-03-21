@@ -1,8 +1,18 @@
-# Clean Architecture Project
+# 🌟 Clean Architecture Project
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https://github.com/Zaytsev-Dmitry/clean-architecture&label=Repository%20Visits&countColor=%230c7ebe&style=flat&labelStyle=none)
 
-🚀 **A modern Java-based project following Clean Architecture principles.**
+🚀 **The Ultimate Java Clean Architecture Boilerplate — Scalable, Secure, and Production-Ready!**
+
+---
+
+## 🔥 Why Choose This Project?
+
+✅ **Enterprise-Grade** — Designed for real-world, high-performance applications.  
+✅ **Scalable & Maintainable** — Built with Clean Architecture principles, ensuring long-term flexibility.  
+✅ **Production-Ready** — Pre-configured with essential technologies like **Spring Boot**, **Hibernate**, **PostgreSQL**, and **Swagger**.  
+✅ **Secure by Design** — Includes authentication, validation, and best security practices.  
+✅ **API-First Approach** — Fully documented with **OpenAPI** for seamless integration.
 
 ---
 
@@ -27,109 +37,77 @@
 
 ---
 
-## 📖 Project structure
-.
-├── main
-│   ├── java
-│   │   └── com.clean.architecture      # Основной пакет проекта
-│   │       ├── CleanArchitectureApplication.java  # Главный класс приложения
-│   │       ├── adapters                # Адаптеры для взаимодействия с внешним миром
-│   │       │   ├── AppSettings.java      # Конфигурация приложения
-│   │       │   └── rest                 # REST API адаптеры
-│   │       │       ├── api
-│   │       │       │   ├── AbstractLoggableApiDecorator.java # Декоратор API с логированием
-│   │       │       │   └── DecoratedWebApi.java # Основной REST API интерфейс
-│   │       │       ├── controller
-│   │       │       │   └── UserController.java # Контроллер для работы с пользователями
-│   │       │       ├── handler
-│   │       │       │   └── RestExceptionControllerAdvice.java # Глобальная обработка исключений
-│   │       │       ├── presenter         # Представители данных
-│   │       │       │   ├── base
-│   │       │       │   │   ├── BaseListPresenter.java  # Базовый список представления
-│   │       │       │   │   └── BaseSinglePresenter.java  # Базовое одиночное представление
-│   │       │       │   └── user
-│   │       │       │       ├── UserListPresenter.java  # Список пользователей
-│   │       │       │       └── UserSinglePresenter.java  # Один пользователь
-│   │       │       ├── security         # Безопасность
-│   │       │       │   ├── JwtAuthenticationEntryPoint.java # JWT точка входа
-│   │       │       │   ├── JwtFilter.java # Фильтр JWT токенов
-│   │       │       │   └── config
-│   │       │       │       └── SecurityConfig.java # Конфигурация безопасности
-│   │       │       └── validator        # Валидаторы данных
-│   │       │           ├── aspecj
-│   │       │           │   ├── ValidateEndpointParameters.java # Аннотации валидации
-│   │       │           │   └── ValidateEndpointParametersAspect.java # Аспект валидации
-│   │       │           ├── base
-│   │       │           │   ├── RuleChecker.java  # Проверка правил валидации
-│   │       │           │   ├── ValidationRule.java # Правила валидации
-│   │       │           │   └── ValidationRuleType.java # Типы правил валидации
-│   │       │           ├── dto
-│   │       │           │   ├── ValidateItem.java  # Объект валидации
-│   │       │           │   ├── ValidateScheme.java  # Схема валидации
-│   │       │           │   └── ValidateSchemeItem.java  # Элемент схемы валидации
-│   │       │           └── strategy
-│   │       │               ├── NotNullOrEmptyRule.java  # Проверка на null или пустоту
-│   │       │               └── NotNullRule.java  # Проверка на null
-│   │       ├── application          # Бизнес-логика
-│   │       │   ├── port
-│   │       │   │   ├── in            # Входные порты (use cases)
-│   │       │   │   │   ├── UserUCaseDelegate.java # Делегат для пользователя
-│   │       │   │   │   └── usecaseimpl
-│   │       │   │   │       ├── auth
-│   │       │   │   │       └── user
-│   │       │   │   └── out           # Выходные порты (репозитории, API)
-│   │       │   │       ├── repository
-│   │       │   │       │   └── UserRepository.java # Репозиторий пользователя
-│   │       │   │       └── rest
-│   │       │   │           └── keycloak
-│   │       │   ├── usecase           # Реализация бизнес-логики
-│   │       │   │   ├── auth
-│   │       │   │   │   ├── AuthenticationUCase.java # Аутентификация
-│   │       │   │   │   └── CheckJWTSignatureUCase.java # Проверка JWT подписи
-│   │       │   │   └── user
-│   │       │   │       ├── GetAllUsersUCase.java # Получение всех пользователей
-│   │       │   │       └── GetUserByIdUCase.java # Получение пользователя по ID
-│   │       │   └── util
-│   │       │       └── JsonFacade.java # Утилиты для работы с JSON
-│   │       ├── domain              # Доменная область
-│   │       │   ├── auth
-│   │       │   │   ├── CleanArchitectureAuthDetails.java # Детали авторизации
-│   │       │   │   └── CleanArchitectureUserDetails.java # Детали пользователя
-│   │       │   ├── entity
-│   │       │   │   └── User.java # Сущность пользователя
-│   │       │   └── exception
-│   │       │       ├── CustomHttpErrorCode.java # Кастомные HTTP ошибки
-│   │       │       ├── NotFoundException.java # Исключение "Не найдено"
-│   │       │       └── ValidationException.java # Исключение валидации
-│   ├── resources
-│   │   ├── application.yaml  # Основной конфигурационный файл
-│   │   ├── db                # Миграции базы данных
-│   │   │   └── changelog
-│   │   │       ├── changelog-master.xml
-│   │   │       └── v-1.0
-│   │   │           ├── 2025.03
-│   │   │           │   ├── 06.03.2025__16:00_create_basic_tables.sql # SQL для создания таблиц
-│   │   │           │   └── changelog.2025.03.xml
-│   │   │           └── changelog-v-1.0.xml
-│   │   └── static           # Статические ресурсы
-│   │       ├── openapi
-│   │       │   └── api-spec.yml # OpenAPI спецификация
-│   │       └── validator
-│   │           └── scheme
-│   │               └── getUserByUid.json # JSON схема валидации
-└── test
-├── java
-└── com.clean.architecture # Тесты для проекта
+## 📖 Project Structure
 
-🚧 *Work in Progress... Stay tuned!* 🚧
+```plaintext
+main
+├── java
+│   └── com.clean.architecture      # Main package with all business logic and adapters
+│       ├── adapters                # External system adapters (REST API, DB, etc.)
+│       │   └── rest                 # REST API adapters
+│       │       ├── api              # API interfaces & abstractions
+│       │       ├── controller       # HTTP request controllers
+│       │       ├── handler          # Global exception & error handling
+│       │       ├── presenter        # Data transformation (DTOs, mappers)
+│       │       ├── security         # Authentication & JWT security
+│       │       └── validator        # Input data validation
+│       ├── application             # Business logic (use cases)
+│       │   ├── port                 # Clean Architecture ports
+│       │   │   ├── in               # Input ports (use cases & scenarios)
+│       │   │   └── out              # Output ports (repositories, APIs)
+│       │   │       ├── repository   # Database repositories
+│       │   │       └── rest         # External API integrations
+│       │   ├── usecase              # Business logic implementation
+│       │   └── util                 # Utility classes
+│       ├── domain                   # Domain layer (entities, exceptions)
+│       │   ├── entity               # Core business entities
+│       │   └── exception            # Custom exceptions
+├── resources                        # Application resources
+│   ├── application.yaml             # Main configuration file
+│   ├── db                           # Database migrations (Liquibase/Flyway)
+│   └── static                       # Static files (Swagger, JSON schemas)
+│       ├── openapi                  # OpenAPI API spec
+│       └── validator                # JSON validation schemas
+│           └── scheme               # Data validation schemas
+```
+
+---
+
+## 🚀 Getting Started
+
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/Zaytsev-Dmitry/clean-architecture.git
+cd clean-architecture
+```
+
+### **2️⃣ Configure the Application**
+- Update **`application.yaml`** with your database credentials.
+
+### **3️⃣ Run the Application**
+```sh
+./mvnw spring-boot:run
+```
+
+### **4️⃣ Access the API Documentation**
+- Swagger UI: [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/)
+
+---
+
+## 💡 Contributing
+We welcome contributions!
+If you'd like to improve this project, feel free to fork, create a branch, make changes, and submit a pull request. 🚀
 
 ---
 
 ## 📬 Contact Me
 
-Feel free to reach out if you have any questions or suggestions!
+Have questions, suggestions, or just want to connect? Reach out! 📩
 
-[<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">](mailto:zaytsev.dmitry9228@gmail.com)
+Want to collaborate? Let’s connect! 👇
+
+[<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">](mailto:zaytsev.dmitry9228@gmail.com)  
 [<img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">](https://t.me/zaytsev_dv)
 
 ---
+
