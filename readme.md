@@ -42,8 +42,8 @@
 ```plaintext
 main
 ├── java
-│   └── com.clean.architecture      # Main package with all business logic and adapters
-│       ├── adapters                # External system adapters (REST API, DB, etc.)
+│   └── com.clean.architecture       # Main package with all business logic and adapters
+│       ├── adapters                 # External system adapters (REST API, DB, etc.)
 │       │   └── rest                 # REST API adapters
 │       │       ├── api              # API interfaces & abstractions
 │       │       │   ├── desktop      # Desktop API
