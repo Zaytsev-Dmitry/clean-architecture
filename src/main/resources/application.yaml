@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:root}
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/clean-architecture}
+    url: ${DB_URL:jdbc:postgresql://postgres_server:5432/clean-architecture}
     hikari:
       maximum-pool-size: 10
       minimum-idle: 2

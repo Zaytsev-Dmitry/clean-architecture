@@ -1,5 +1,16 @@
 version: '3'
 services:
+  backend:
+    image: zaytsevdv/clean-architecture:latest
+    container_name: clean-architecture
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - postgres_server
+    networks:
+      - skynet
+
   postgres_server:
     restart: always
     image: postgres:14
