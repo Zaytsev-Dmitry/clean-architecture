@@ -3,8 +3,8 @@ package com.clean.architecture.adapters.in.rest.api.web;
 import com.clean.architecture.adapters.in.rest.controller.web.UserController;
 import com.clean.architecture.adapters.in.rest.validator.aspects.ValidateEndpoint;
 import com.generated.swaggerCodegen.api.CleanArchitectureApi;
+import com.generated.swaggerCodegen.model.ListUserBackendResponse;
 import com.generated.swaggerCodegen.model.SingleUserBackendResponse;
-import com.generated.swaggerCodegen.model.UserBackendResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class DecoratedWebApi extends AbstractLoggableApiDecorator implements Cle
     }
 
     @Override
-    public ResponseEntity<UserBackendResponse> getAllUsers() {
+    public ResponseEntity<ListUserBackendResponse> getAllUsers() {
         return processing("getAllUsers", userController::getAllUsers);
     }
 }

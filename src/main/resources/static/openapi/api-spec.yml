@@ -18,7 +18,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserBackendResponse'
+                $ref: '#/components/schemas/ListUserBackendResponse'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -112,7 +112,7 @@ components:
         path:
           type: string
 #--------------------------------------------------------------------------------------------------------#
-    UserBackendResponse:
+    ListUserBackendResponse:
       allOf:
         - $ref: '#/components/schemas/BasicBackendResponse'
         - type: object
