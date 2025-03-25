@@ -1,6 +1,5 @@
-package com.clean.architecture.adapters.in.rest.validator.dto;
+package com.clean.architecture.adapters.in.rest.validator.model;
 
-import com.clean.architecture.adapters.in.rest.validator.base.ValidationRuleType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ValidateItem {
     private String name;
-    private ValidationRuleType rule;
+    private Rule rule;
     private String errorMessage;
     private Object value;
 }

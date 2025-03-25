@@ -9,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ValidateScheme {
-    private String validatorName;
-    private List<ValidateSchemeItem> items;
+public class ValidationScheme {
+    private String schemeName;
+    private List<ValidationSchemeField> fields;
 }

@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ValidateSchemeItem {
-    private String field;
+public class ValidationSchemeField {
+    private String name;
     private String description;
     private String rule;
     private String errorMsg;
     private boolean isCustomLogic;
+
+    private ValidationScheme nestedScheme; //Схема для вложенного объекта
 }
