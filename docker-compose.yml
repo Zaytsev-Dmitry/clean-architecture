@@ -1,7 +1,8 @@
 version: '3'
 services:
   backend:
-    image: zaytsevdv/clean-architecture:latest
+    build:
+      dockerfile: Dockerfile
     container_name: clean-architecture
     ports:
       - "8080:8080"
