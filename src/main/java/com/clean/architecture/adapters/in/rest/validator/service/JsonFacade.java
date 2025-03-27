@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import static org.springframework.beans.factory.config.ConfigurableBeanFactory.SCOPE_SINGLETON;
 
 @Getter
-@Service
 @Scope(value = SCOPE_SINGLETON)
 public final class JsonFacade {
     public final static ObjectMapper objectMapper = new ObjectMapper();
