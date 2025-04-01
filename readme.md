@@ -1,4 +1,4 @@
-# 🚀 Clean Architecture Project
+# 🚀 Java Clean Architecture Project
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https://github.com/Zaytsev-Dmitry/clean-architecture&label=Repository%20Visits&countColor=%230c7ebe&style=flat&labelStyle=none)
 
